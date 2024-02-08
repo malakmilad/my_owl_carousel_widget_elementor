@@ -134,6 +134,16 @@ class Custom_Carousel_Widget extends \Elementor\Widget_Base
             ]
         );
         $this->add_control(
+            'dots',
+            [
+                'label' => __('Dots', 'elementor-owl-carousel'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => 'yes',
+                'label_on' => __('Yes', 'elementor-owl-carousel'),
+                'label_off' => __('No', 'elementor-owl-carousel'),
+            ]
+        );
+        $this->add_control(
             'autoplayHoverPause',
             [
                 'label' => __('Auto Play Hover Pause', 'elementor-owl-carousel'),
@@ -343,6 +353,7 @@ class Custom_Carousel_Widget extends \Elementor\Widget_Base
         $navs = ($settings['navs'] === 'yes') ? true : false;
         $autoplayHoverPause = ($settings['autoplayHoverPause'] === 'yes') ? true : false;
         $autoplayTimeout = $settings['autoplayTimeout'];
+        $dots=$settings['dots'];
         //?setting for next navigation
         $position_nav_next_top = $settings['position_nav_next_top'];
         $position_nav_next_right = $settings['position_nav_next_right'];
@@ -440,6 +451,7 @@ class Custom_Carousel_Widget extends \Elementor\Widget_Base
                     autoplayHoverPause: <?php echo $autoplayHoverPause ? 'true' : 'false'; ?>,
                     margin: 10,
                     nav: <?php echo $navs ? 'true' : 'false'; ?>,
+                    dots:<?php echo $dots?'true':'false';?>,
                     navText: [
                         "<i class='<?php echo $icon_nav_prev['value'] ?>'></i>",
                         "<i class='<?php echo $icon_nav_next['value'] ?>'></i>"
