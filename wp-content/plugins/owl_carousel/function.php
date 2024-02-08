@@ -458,13 +458,16 @@ class Custom_Carousel_Widget extends \Elementor\Widget_Base
                     ],
                     responsive: {
                         0: {
-                            items: <?php echo $items_number_web ?>
+                            items: <?php echo $items_number_mobile ?>,
+                            responsiveBaseElement: '.owl-carousel'
                         },
                         768: {
-                            items: <?php echo $items_number_mobile ?>
+                            items: <?php echo $items_number_tablet ?>,
+                            responsiveBaseElement: '.owl-carousel'
                         },
                         1000: {
-                            items: <?php echo $items_number_tablet ?>
+                            items: <?php echo $items_number_web ?>,
+                            responsiveBaseElement: '.owl-carousel'
                         }
                     }
                 });
